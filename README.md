@@ -248,23 +248,17 @@ This project is open-source and available under the [MIT License](LICENSE).
 
 ## 📸 Screenshots
 
-### Landing Page
-Beautiful role selection with glassmorphism design
+| Landing Page | Admin Panel | User Panel | Add Item Form |
+|--------------|-------------|------------|---------------|
+| ![](screenshots/landing.png) | ![](screenshots/admin.png) | ![](screenshots/user.png) | ![](screenshots/add-item.png) |
 
-### Admin Panel
-Full control with search, delete, and mark as found features
-
-### User Panel
-Clean interface for reporting and viewing items
-
-### Add Item Form
-Simple, focused form for reporting lost items
+| Beautiful role selection with glassmorphism design | Full control with search, delete, and mark as found features | Clean interface for reporting and viewing items | Simple, focused form for reporting lost items |
 
 ---
 
 ## 👨‍💻 Author
 
-**Nayan Kumar Jain**
+**Nayan Jain**
 
 -   GitHub: [@KumarNayan11](https://github.com/KumarNayan11)
 -   Portfolio: [nayanjain.in](https://nayanjain.in)
@@ -279,7 +273,7 @@ Simple, focused form for reporting lost items
 
 ---
 
-<p align="center">💻 Made with ❤️ by <b>Nayan</b></p>
+<p align="center"> Made with ❤️ by <b>Nayan</b></p>
 <p align="center">
   <a href="https://github.com/KumarNayan11/Lost-found-app">
     <img src="https://img.shields.io/github/stars/KumarNayan11/Lost-found-app?style=social" alt="GitHub stars">
