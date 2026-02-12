@@ -24,11 +24,11 @@ Designed for students, campus communities, or small organizations to track belon
 -   **Role switching** - Switch to admin panel if needed
 
 ### 🎨 Modern UI Design
--   **Premium glassmorphism design** with gradient backgrounds
--   **Smooth animations** and hover effects
+-   **Warm beige color theme** with minimalist aesthetics
+-   **Clean card-based layouts** for better organization
 -   **Flash message notifications** for user feedback
 -   **Fully responsive** mobile-first design
--   **Card-based layouts** for better organization
+-   **Simple, professional design** without distracting animations
 -   **Empty state handling** with engaging visuals
 -   **Session-based role management**
 
@@ -172,10 +172,10 @@ CREATE TABLE items (
 
 ### Design Highlights
 
--   **Glassmorphism effects** - Frosted glass cards with backdrop blur
--   **Gradient backgrounds** - Purple gradient on landing page
--   **Modern shadows** - Multi-layer elevation system
--   **Smooth transitions** - 250ms animations on all interactions
+-   **Warm beige gradient** - Soft beige-to-tan background
+-   **Minimalist card design** - Clean borders without heavy animations
+-   **Professional aesthetic** - Simple, elegant design
+-   **Subtle shadows** - Refined elevation system
 -   **Flash notifications** - Auto-dismissing success/error messages
 -   **Empty states** - Engaging visuals when no items exist
 -   **Responsive grid** - Adapts from mobile to desktop seamlessly
@@ -183,10 +183,10 @@ CREATE TABLE items (
 ### Color Palette
 
 ```css
-Primary Blue:   #2563eb
-Primary Red:    #dc2626
-Primary Green:  #16a34a
-Primary Purple: #9333ea
+Primary Beige:  #D4A574
+Beige Dark:     #8B7355
+Beige Light:    #F5E6D3
+Accent Brown:   #6B4423
 ```
 
 ---
