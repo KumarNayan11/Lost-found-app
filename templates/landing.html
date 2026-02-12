@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="landing-container">
+    <div class="landing-hero">
+        <h1 class="landing-title">🔍 Lost & Found</h1>
+        <p class="landing-subtitle">Choose your panel to get started</p>
+    </div>
+
+    <div class="role-cards">
+        <a href="{{ url_for('set_role', role='admin') }}" class="role-card admin-card">
+            <div class="role-icon">🔧</div>
+            <h2>Admin Panel</h2>
+            <p>Manage items, moderate entries, and control the database</p>
+            <ul class="role-features">
+                <li>✓ View all items</li>
+                <li>✓ Delete entries</li>
+                <li>✓ Clear database</li>
+                <li>✓ Mark items as found</li>
+            </ul>
+            <div class="role-action">Enter Admin Panel →</div>
+        </a>
+
+        <a href="{{ url_for('set_role', role='user') }}" class="role-card user-card">
+            <div class="role-icon">👤</div>
+            <h2>User Panel</h2>
+            <p>Report lost items and search the database</p>
+            <ul class="role-features">
+                <li>✓ Report lost items</li>
+                <li>✓ Search database</li>
+                <li>✓ View all listings</li>
+                <li>✓ Find your belongings</li>
+            </ul>
+            <div class="role-action">Enter User Panel →</div>
+        </a>
+    </div>
+</div>
+{% endblock %}

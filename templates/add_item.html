@@ -1,23 +1,35 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Report a Lost Item</h1>
+<div class="form-page">
     <div class="form-container">
-        <form method="post">
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name" required>
+        <h1 class="form-title">📝 Report Lost Item</h1>
+        <p class="form-subtitle">Fill in the details below to report your lost item</p>
 
-            <label for="description">Description:</label>
-            <textarea name="description" id="description" required></textarea>
+        <form method="post" class="item-form">
+            <div class="form-group">
+                <label for="name">Item Name *</label>
+                <input type="text" name="name" id="name" placeholder="e.g., Blue Water Bottle" required
+                    class="form-input">
+            </div>
 
-            <label for="contact">Contact Info:</label>
-            <input type="text" name="contact" id="contact" required>
+            <div class="form-group">
+                <label for="description">Description *</label>
+                <textarea name="description" id="description" rows="4" placeholder="Describe your item in detail..."
+                    required class="form-input"></textarea>
+            </div>
 
-            <!-- Hidden status input fixed to Lost -->
-            <input type="hidden" name="status" value="Lost">
+            <div class="form-group">
+                <label for="contact">Contact Information *</label>
+                <input type="text" name="contact" id="contact" placeholder="Your email or phone number" required
+                    class="form-input">
+            </div>
 
-            <button type="submit">Submit</button>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary btn-large">Submit Report</button>
+                <a href="{{ url_for('user_dashboard') }}" class="btn btn-secondary">Cancel</a>
+            </div>
         </form>
-        <a href="{{ url_for('index') }}" class="back-link">⬅ Back to List</a>
     </div>
+</div>
 {% endblock %}

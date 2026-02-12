@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="dashboard-container">
+    <!-- Header -->
+    <div class="dashboard-header">
+        <div class="header-left">
+            <h1 class="dashboard-title">🔍 Lost & Found</h1>
+        </div>
+        <div class="header-right">
+            <a href="{{ url_for('set_role', role='admin') }}" class="switch-role-btn">
+                Switch to Admin Panel →
+            </a>
+        </div>
+    </div>
+
+    <!-- Action Bar -->
+    <div class="action-bar">
+        <a href="{{ url_for('add_item') }}" class="btn btn-primary btn-large">
+            ➕ Report Lost Item
+        </a>
+
+        <form method="get" class="search-form">
+            <input type="text" name="search" value="{{ search }}"
+                placeholder="🔍 Search by name, description, or contact..." class="search-input">
+            <button type="submit" class="btn btn-primary">Search</button>
+            {% if search %}
+            <a href="{{ url_for('user_dashboard') }}" class="btn btn-secondary">Clear</a>
+            {% endif %}
+        </form>
+    </div>
+
+    <!-- Lost Items Section -->
+    <div class="items-section">
+        <h2 class="section-title">
+            Lost Items
+            {% set lost_items = items | selectattr(4, 'equalto', 'Lost') | list %}
+            <span class="item-count">({{ lost_items | length }})</span>
+        </h2>
+
+        <div class="items-grid">
+            {% if lost_items %}
+            {% for item in lost_items %}
+            <div class="item-card lost-card">
+                <div class="item-header">
+                    <h3 class="item-name">{{ item[1] }}</h3>
+                    <span class="item-status status-lost">Lost</span>
+                </div>
+                <p class="item-description">{{ item[2] }}</p>
+                <div class="item-meta">
+                    <span class="item-contact">📧 {{ item[3] }}</span>
+                    <span class="item-date">🕒 {{ item[5] }}</span>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="empty-state">
+                <div class="empty-icon">📭</div>
+                <h3>No Lost Items</h3>
+                <p>{% if search %}No items match your search{% else %}No lost items reported yet. Be the first to
+                    report!{% endif %}</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Found Items Section -->
+    <div class="items-section">
+        <h2 class="section-title">
+            Found Items
+            {% set found_items = items | selectattr(4, 'equalto', 'Found') | list %}
+            <span class="item-count">({{ found_items | length }})</span>
+        </h2>
+
+        <div class="items-grid">
+            {% if found_items %}
+            {% for item in found_items %}
+            <div class="item-card found-card">
+                <div class="item-header">
+                    <h3 class="item-name">{{ item[1] }}</h3>
+                    <span class="item-status status-found">Found</span>
+                </div>
+                <p class="item-description">{{ item[2] }}</p>
+                <div class="item-meta">
+                    <span class="item-contact">📧 {{ item[3] }}</span>
+                    {% if item[6] %}
+                    <span class="item-date">✓ Found: {{ item[6] }}</span>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="empty-state">
+                <div class="empty-icon">✨</div>
+                <h3>No Found Items</h3>
+                <p>{% if search %}No items match your search{% else %}No items have been found yet{% endif %}</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
